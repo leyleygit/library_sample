@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             color: Colors.white,
             fontWeight: FontWeight.w500,
           ),
-          tabIconColor: tests[_selectedIconIndex],
+          tabIconColor: Colors.white,
           tabIconSize: 28.0,
           tabIconSelectedSize: 26.0,
           tabSelectedColor: Colors.white,

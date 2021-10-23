@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_sample/data/bookData.dart';
+import 'package:library_sample/pages/bookDirection.dart';
 
 class BookDetail extends StatefulWidget {
   final int index;
@@ -10,6 +12,7 @@ class BookDetail extends StatefulWidget {
 }
 
 final _bookDetail = bookData;
+
 class _BookDetailState extends State<BookDetail> {
   @override
   Widget build(BuildContext context) {
@@ -65,7 +68,8 @@ class _BookDetailState extends State<BookDetail> {
                       height: 250,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(_bookDetail[widget.index]['img'][0])),
+                            image: AssetImage(
+                                _bookDetail[widget.index]['img'][0])),
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
@@ -219,10 +223,17 @@ class _BookDetailState extends State<BookDetail> {
                         width: 5,
                       ),
                       Container(
-                        width: 150,
+                        width: 150, 
                         height: 60,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (_) => BookDirection()));
+                            });
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -251,7 +262,6 @@ class _BookDetailState extends State<BookDetail> {
                   ),
                   Container(
                       width: 380,
-                      
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
